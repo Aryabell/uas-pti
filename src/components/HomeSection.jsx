@@ -131,12 +131,11 @@ const HomeSection = () => {
             Seek Adventurous Opportunities
           </p>
           <div className="App">
+            {/* <h2>Current Time in Banten</h2> */}
             <p>
-              {" "}
+              {/* UTC DateTime:{" "} */}
               {liveDate &&
-                moment(liveDate)
-                  .add(1, "seconds")
-                  .format("DD-MM-YYYY hh:mm:ss A")}
+                moment(liveDate).format("dddd, DD-MM-YYYY hh:mm:ss A")}
             </p>
           </div>
         </div>

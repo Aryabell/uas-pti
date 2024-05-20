@@ -71,7 +71,7 @@ section.home {
     height: 50px;
     background: linear-gradient(rgba(31, 31, 31, 0.2),rgba(31, 31, 31, 0.2));
     backdrop-filter: blur(1px);
-    border-radius: .7rem;
+    border-radius: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -103,8 +103,8 @@ section.home {
 .home .home-box nav .logo h3 {
     color: var(--white-color);
     font-weight: 400;
-    font-size: 1.5rem;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 3);
+    font-size: 1.3rem;
+    text-shadow: 0;
 }
 
 .home .home-box nav .menu .close {
@@ -120,8 +120,8 @@ section.home {
 .home .home-box nav .menu ul li a {
     color: var(--white-color);
     font-weight: 400;
-    font-size: 1.3rem;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 3);
+    font-size: 1rem;
+    text-shadow: 0;
 }
 
 .home .home-box nav .menu ul li a:hover {
@@ -156,55 +156,33 @@ section.home {
     font-size: 1.4rem;
     text-align: center;
     margin-bottom: 2rem;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 3);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 50);
 }
 
-.home .home-box .content .search {
-    width: 100%;
-    max-width: 38rem;
-    height: 45px;
-    background: var(--white-color);
-    border-radius: 3rem;
-    display: flex;
-    align-items: center;
-    padding: .3rem;
-}
-
-.home .home-box .content .search i {
-    color: rgba(0,0,0,.5);
-    margin: 0 .6rem;
-}
-
-.home .home-box .content .search input {
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    border: none;
-    outline: none;
-    font-weight: 400;
-}
-
-.home .home-box .content .search button {
-    height: 100%;
-    padding: 0 1rem;
-    border-radius: inherit;
-    background: var(--green-color);
-    border: none;
-    outline: none;
+.home .home-box .App {
+    font-size: 2rem;
     color: var(--white-color);
-    font-weight: 400;
-    cursor: pointer;
-}
+    font-weight: 200;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 50);
+    text-align: center;
+    line-height: 1.2;
+    opacity: 1;
+    transform: translate(0, 100px);
+  }
 
-.home .home-box .content .search button:hover {
-    background: #02636e;
+  .home .home-box .content h2{
+    font-size: 3rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    text-align: center;
+    opacity: 1;
 }
 
 .home .home-box .content h5, .home .home-box .content h1, .home .home-box .content p, .home .home-box .content .search {
     transform: translate(0, 100px);
     opacity: 1;
 }
-
 
 /* travel section starts here  */
 
@@ -730,12 +708,12 @@ footer .footer .explanation {
     cursor: pointer;
     border: none;
     border-radius: 4px;
-    background-color: #007BFF;
+    background-color: #114250;
     color: white;
 }
   
   button:hover {
-    background-color: #0056b3;
+    background-color: #215965;
 }
 
 .text-content {
