@@ -101,7 +101,7 @@ const HomeSection = () => {
             <div className="bar">
               <i className="fas fa-bars"></i> {/* Update FontAwesome class */}
             </div>
-            <h3>BANTEN | KELOMPOK 5</h3>
+            <h3>BANTEN</h3>
           </div>
           <div className="menu">
             <div className="close">
@@ -131,13 +131,12 @@ const HomeSection = () => {
             Seek Adventurous Opportunities
           </p>
           <div className="App">
-            <h1>Current Time in Banten</h1>
             <p>
-              UTC DateTime:{" "}
+              {" "}
               {liveDate &&
                 moment(liveDate)
                   .add(1, "seconds")
-                  .format("dddd, DD-MM-YYYY hh:mm:ss A")}
+                  .format("DD-MM-YYYY hh:mm:ss A")}
             </p>
           </div>
         </div>

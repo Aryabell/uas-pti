@@ -16,7 +16,7 @@ const Box = ({ image, title, description, onClick }) => {
 
   return (
     <div className="box" onClick={handleClick} style={{ opacity: 0, transform: "translateX(-100px)" }}>
-      <img src={image} alt={title} />
+      <img className="box-image" src={image} alt={title} />
       <div className="text">
         <h2>{title}</h2>
         <p className="description">{description}</p>
@@ -100,7 +100,8 @@ const DestinationsSection = () => {
   return (
     <section className="destinations" id="destinations">
       <div className="container">
-        <div className="container-box" style={{ opacity: 0, transform: "translateX(-100px)" }}>
+        
+        <div className="container-box" style={{display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <h1 style={{ fontSize: '35px', fontWeight: 'bold', display: 'flex', flexDirection: 'column', alignItems: 'center'}}>Destinations</h1>
           <div className="content" style={{ opacity: 0, transform: "translateX(-100px)" }}>
             {/* Uncomment this paragraph if you want to include it */}

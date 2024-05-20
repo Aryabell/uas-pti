@@ -7,9 +7,6 @@ const Footer = () => {
                 <div className="container">
                     <div className="detail">
                         <h3>Kelompok 5</h3>
-                        <p>Portal ini menyajikan petunjuk dan informasi wisata di Provinsi Banten.</p>
-                        <h5>get in touch</h5>
-                        <a href="mailto:kelompok5@mail.com">kelompok5@mail.com</a>
                         <div className="social">
                             <a href="https://twitter.com/banten_pemprov" className="text-blue-400 hover:text-blue-600" target="_blank" rel="noopener noreferrer">
                                 <i className="fab fa-twitter-square fa-2x"></i>
