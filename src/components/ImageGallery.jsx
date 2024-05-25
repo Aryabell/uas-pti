@@ -50,80 +50,26 @@ function ImageGallery() {
     }
   };
 
+  const openUnsplashLink = (link) => {
+    window.open(link, '_blank');
+  };
+
   return (
     <div className="App" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-      <h1 style={{ fontSize: '35px', fontWeight: 'bold' }}>Banten Image Gallery</h1>
+      <h1 className="text-3xl font-bold" id='gallery'>Banten Image Gallery</h1>
       <div className="image-gallery" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
         {images.map(image => (
-          <div key={image.id} className="image-card" style={styles.imageCard}>
-            <img src={image.urls.small} alt={image.description || 'Banten'} style={styles.image} />
-            <div className="caption" style={styles.caption}>{image.description || 'Banten'}</div>
+          <div key={image.id} className="image-card" onClick={() => openUnsplashLink(image.links.html)}>
+            <img src={image.urls.small} alt={image.description || 'Banten'} />
           </div>
         ))}
       </div>
       {loading && <p>Loading...</p>}
       {!loading && images.length < 16 && (
-        <button onClick={loadMoreImages} style={styles.button}>Load More</button>
+        <button onClick={loadMoreImages}>Load More</button>
       )}
     </div>
   );
 }
-
-const styles = {
-  imageCard: {
-    width: '300px',
-    height: '200px',
-    margin: '10px',
-    overflow: 'hidden',
-    borderRadius: '10px',
-    position: 'relative',
-    cursor: 'pointer',
-  },
-  image: {
-    width: '100%',
-    height: '100%',
-    objectFit: 'cover',
-    borderRadius: '10px',
-    transition: 'transform 0.3s ease-in-out',
-  },
-  button: {
-    margin: '20px',
-    padding: '10px 20px',
-    fontSize: '16px',
-    borderRadius: '5px',
-    border: 'none',
-    backgroundColor: '#007bff',
-    color: '#fff',
-    cursor: 'pointer',
-  },
-  caption: {
-    position: 'absolute',
-    bottom: '0',
-    left: '0',
-    width: '100%',
-    padding: '10px',
-    backgroundColor: 'rgba(0, 0, 0, 0.7)',
-    color: '#fff',
-    textAlign: 'center',
-    opacity: '0',
-    transition: 'opacity 0.3s ease-in-out',
-    borderRadius: '0 0 10px 10px',
-  },
-};
-
-// Inject the CSS into the document head
-const css = `
-.image-card:hover img {
-  transform: scale(1.3);
-}
-.image-card:hover .caption {
-  opacity: 1;
-}
-`;
-
-const styleSheet = document.createElement("style");
-styleSheet.type = "text/css";
-styleSheet.innerText = css;
-document.head.appendChild(styleSheet);
 
 export default ImageGallery;

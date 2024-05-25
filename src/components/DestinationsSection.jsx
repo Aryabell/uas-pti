@@ -15,7 +15,11 @@ const Box = ({ image, title, description, onClick }) => {
   };
 
   return (
-    <div className="box" onClick={handleClick} style={{ opacity: 0, transform: "translateX(-100px)" }}>
+    <div
+      className="box"
+      onClick={handleClick}
+      style={{ opacity: 0 }}
+    >
       <img className="box-image" src={image} alt={title} />
       <div className="text">
         <h2>{title}</h2>
@@ -100,10 +104,9 @@ const DestinationsSection = () => {
   return (
     <section className="destinations" id="destinations">
       <div className="container">
-        
-        <div className="container-box" style={{display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-          <h1 style={{ fontSize: '35px', fontWeight: 'bold', display: 'flex', flexDirection: 'column', alignItems: 'center'}}>Destinations</h1>
-          <div className="content" style={{ opacity: 0, transform: "translateX(-100px)" }}>
+        <div className="container-box flex flex-col items-center justify-center">
+          <h1 className="text-3xl font-bold mt-90">Destinations</h1>
+          <div className="content opacity-0 transform -translate-x-32">
             {/* Uncomment this paragraph if you want to include it */}
             {/* <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero culpa pariatur iusto sequi, ut expedita soluta nihil est quaerat itaque corporis maiores in, at id officiis tempore. Harum vitae fugit itaque expedita asperiores vero delectus?</p> */}
           </div>
@@ -143,13 +146,20 @@ const DestinationsSection = () => {
         </div>
         {/* Display modal if modalOpen is true */}
         {modalOpen && (
-          <Modal image={selectedImage} title={selectedTitle} closeModal={closeModal} />
+          <Modal
+            image={selectedImage}
+            title={selectedTitle}
+            closeModal={closeModal}
+          />
         )}
       </div>
       {/* Animation components */}
       <SwipeAnimation
         triggerSelector=".destinations"
-        boxSelectors={[".destinations .container-box", ".destinations .container-box .content"]}
+        boxSelectors={[
+          ".destinations .container-box",
+          ".destinations .container-box .content",
+        ]}
       />
       <GalleryAnimation
         triggerSelector=".destinations .gallery"

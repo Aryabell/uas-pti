@@ -28,12 +28,25 @@ const YouTubePlayer = ({ videoId }) => {
   }, [videoId, API_KEY]);
 
   return (
-    <div className="flex flex-col max-w-full items-center justify-center">
-      <div className="flex mx-auto" id='youtube'>
-        {videoInfo && <YouTube videoId={videoId} style={{ margin: 'auto',  marginTop: '30px'}}/>}
+    <div className="flex flex-col max-w-full items-center justify-center mt-11">
+      <h1 className="text-3xl font-bold mt-6" id='about'>About Banten</h1>
+      <div className="youtube-container" id='youtube'>
+        {videoInfo && (
+          <YouTube 
+            videoId={videoId} 
+            opts={{
+              width: '100%',
+              height: '390px',
+              playerVars: {
+                autoplay: 0,
+              },
+            }} 
+            className="youtube-player"
+          />
+        )}
       </div>
-      <div className="text-content md:w-1/2 md:pl-4">
-        <p style={{fontSize: '16px', marginTop: '30px'}}>Banten, Provinsi Di Barat Pulau Jawa, Terkenal Dengan Sejarahnya Yang Kaya Dan Keindahan Alamnya. Dari Situs Bersejarah Seperti Keraton Surosowan Hingga Destinasi Alam Memukau Seperti Taman Nasional Ujung Kulon Dan Pantai Anyer, Banten Menawarkan Perpaduan Unik Antara Budaya, Alam, Dan Tradisi. Keindahannya Menjadikan Banten Tempat Yang Sempurna Untuk Petualangan Dan Relaksasi.</p>
+      <div className="text-content mt-4 md:w-3/4 lg:w-1/2 text-center">
+        <p>Banten, Provinsi Di Barat Pulau Jawa, Terkenal Dengan Sejarahnya Yang Kaya Dan Keindahan Alamnya. Dari Situs Bersejarah Seperti Keraton Surosowan Hingga Destinasi Alam Memukau Seperti Taman Nasional Ujung Kulon Dan Pantai Anyer, Banten Menawarkan Perpaduan Unik Antara Budaya, Alam, Dan Tradisi. Keindahannya Menjadikan Banten Tempat Yang Sempurna Untuk Petualangan Dan Relaksasi.</p>
       </div>
     </div>
   );
