@@ -47,23 +47,20 @@ const HomeSection = () => {
     };
 
     const bars = document.querySelectorAll(".bar");
-    const close = document.querySelectorAll(".close");
+    const menu = document.querySelector(".menu");
 
     bars.forEach((bar) => {
       bar.addEventListener("click", handleBarsClick);
     });
 
-    close.forEach((closeBtn) => {
-      closeBtn.addEventListener("click", handleCloseClick);
-    });
+    // Add event listener to the menu itself
+    menu.addEventListener("click", handleCloseClick);
 
     return () => {
       bars.forEach((bar) => {
         bar.removeEventListener("click", handleBarsClick);
       });
-      close.forEach((closeBtn) => {
-        closeBtn.removeEventListener("click", handleCloseClick);
-      });
+      menu.removeEventListener("click", handleCloseClick);
     };
   }, []);
 
@@ -91,51 +88,52 @@ const HomeSection = () => {
   }, [liveDate]);
 
   return (
-    <section className="home" id="home">
+    <section className="home w-full h-screen p-0 m-0" id="home">
       <div
-        className="home-box"
+        className="home-box w-full h-full bg-cover bg-center"
         style={{ backgroundImage: backgroundImages[backgroundIndex] }}
       >
-        <nav>
-          <div className="logo bars">
-            <div className="bar">
-              <i className="fas fa-bars"></i> {/* Update FontAwesome class */}
+        <nav className="w-full h-12 bg-[linear-gradient(rgba(31,31,31,0.2),rgba(31,31,31,0.2))] backdrop-blur-sm flex justify-between items-center px-16 fixed top-0 left-0 z-10">
+          <div className="logo flex items-center gap-4">
+            <div className="bar text-2xl text-white cursor-pointer hidden">
+              <i className="fas fa-bars"></i>
             </div>
-            <h3>BANTEN</h3>
+            <h3 className="text-white font-normal text-xl m-0">BANTEN</h3>
           </div>
           <div className="menu">
-            <div className="close">
+            <div className="close hidden">
               <i className="fas fa-times"></i>
             </div>
-            <ul>
+            <ul className="flex gap-12 list-none m-0 p-0">
               <li>
-                <a href="#home">home</a>
+                <a href="#home" className="text-white font-normal text-xl hover:text-white/70">home</a>
               </li>
               <li>
-                <a href="#youtube">about</a>
+                <a href="#about" className="text-white font-normal text-xl hover:text-white/70">about</a>
               </li>
               <li>
-                <a href="#destinations">destinations</a>
+                <a href="#destinations" className="text-white font-normal text-xl hover:text-white/70">destinations</a>
               </li>
               <li>
-                <a href="#footer">about us</a>
+                <a href="#gallery" className="text-white font-normal text-xl hover:text-white/70">Gallery</a>
+              </li>
+              <li>
+                <a href="#footer" className="text-white font-normal text-xl hover:text-white/70">about us</a>
               </li>
             </ul>
           </div>
         </nav>
 
-        <div className="content">
-          <h1>Banten, The Land of Serenity</h1>
-          <p>
-            Experience the Natural Beauty. Embrace the Cultural Diversity, And
-            Seek Adventurous Opportunities
+        <div className="content w-full h-[calc(100%-65px)] flex flex-col justify-center items-center">
+          <h1 className="text-6xl max-w-6xl text-white text-center font-semibold leading-tight mb-4">
+            Banten, The Land of Serenity
+          </h1>
+          <p className="text-gray-300 font-semibold max-w-4xl text-center text-lg mb-8">
+            Experience the Natural Beauty. Embrace the Cultural Diversity, And Seek Adventurous Opportunities
           </p>
-          <div className="App">
-            {/* <h2>Current Time in Banten</h2> */}
+          <div className="App text-xl max-w-2xl text-white text-center font-semibold leading-tight mb-4">
             <p>
-              {/* UTC DateTime:{" "} */}
-              {liveDate &&
-                moment(liveDate).format("dddd, DD-MM-YYYY hh:mm:ss A")}
+              {liveDate && moment(liveDate).format("dddd, DD-MM-YYYY hh:mm:ss A")}
             </p>
           </div>
         </div>
@@ -143,5 +141,6 @@ const HomeSection = () => {
     </section>
   );
 };
+
 
 export default HomeSection;
