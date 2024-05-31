@@ -105,7 +105,7 @@ const DestinationsSection = () => {
     <section className="destinations" id="destinations">
       <div className="container">
         <div className="container-box flex flex-col items-center justify-center">
-          <h1 className="text-3xl font-bold mt-50">Destinasi</h1>
+          <h1 className="text-3xl font-bold mt-50">Destination</h1>
           <div className="content opacity-0 transform -translate-x-32">
             {/* Hapus tanda komentar ini jika ingin menyertakannya */}
             {/* <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero culpa pariatur iusto sequi, ut expedita soluta nihil est quaerat itaque corporis maiores in, at id officiis tempore. Harum vitae fugit itaque expedita asperiores vero delectus?</p> */}
@@ -116,31 +116,31 @@ const DestinationsSection = () => {
           <Box
             image="assets/Telaga.jpg"
             title="Telaga Biru Cisoka"
-            description="Danau biru yang menakjubkan sempurna untuk bersantai dan menikmati alam."
+            description="A stunning blue lake perfect for relaxing and enjoying nature."
             onClick={openModal}
           />
           <Box
             image="assets/Sawarna.jpeg"
             title="Pantai Sawarna"
-            description="Pantai yang indah dengan air yang jernih dan pemandangan yang menakjubkan."
+            description="A beautiful beach with pristine waters and scenic views."
             onClick={openModal}
           />
           <Box
             image="assets/Anyer.jpeg"
             title="Pantai Anyer"
-            description="Tujuan pantai yang populer dikenal dengan matahari terbenamnya dan aktivitasnya."
+            description="A popular beach destination known for its sunsets and activities."
             onClick={openModal}
           />
           <Box
             image="assets/UjungKulon.jpeg"
             title="Taman Nasional Ujung Kulon"
-            description="Taman nasional yang menawarkan keanekaragaman hayati dan vegetasi yang hijau."
+            description="A national park offering diverse wildlife and lush greenery."
             onClick={openModal}
           />
           <Box
             image="assets/Carita.jpeg"
             title="Pantai Carita"
-            description="Pantai yang indah dengan ombak yang tenang dan pemandangan yang indah."
+            description="A wonderful beach with calm waves and beautiful views."
             onClick={openModal}
           />
         </div>
