@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+// API KEY untuk Unsplash
 const UNSPLASH_ACCESS_KEY = 'IGgtPcg0K1c7vj6GkzUL8PgNbL1oJaIws_zgM0bQBDs';
 
+// Fungsi ImageGallery
 function ImageGallery() {
   const [images, setImages] = useState([]);
   const [page, setPage] = useState(1);
@@ -15,6 +17,7 @@ function ImageGallery() {
     }
   }, [page]);
 
+  // Fetch Images
   const fetchImages = async () => {
     if (images.length >= 16) return; // Prevent fetching if already 16 images are loaded
 
@@ -56,7 +59,7 @@ function ImageGallery() {
 
   return (
     <div className="App" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-      <h1 className="text-3xl font-bold" id='gallery'>Banten Image Gallery</h1>
+      <h1 className="text-3xl font-bold mt-10" id='gallery'>Banten Image Gallery</h1>
       <div className="image-gallery" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
         {images.map(image => (
           <div key={image.id} className="image-card" onClick={() => openUnsplashLink(image.links.html)}>

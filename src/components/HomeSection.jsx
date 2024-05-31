@@ -88,6 +88,7 @@ const HomeSection = () => {
   }, [liveDate]);
 
   return (
+    // Membuat home section
     <section className="home w-full h-screen p-0 m-0" id="home">
       <div
         className="home-box w-full h-full bg-cover bg-center"
@@ -98,7 +99,7 @@ const HomeSection = () => {
             <div className="bar text-2xl text-white cursor-pointer hidden">
               <i className="fas fa-bars"></i>
             </div>
-            <h3 className="text-white font-normal text-xl m-0">BANTEN</h3>
+            <h3 className="text-white font-normal text-xl m-0 text-shadow-lg">BANTEN</h3>
           </div>
           <div className="menu">
             <div className="close hidden">
@@ -106,32 +107,31 @@ const HomeSection = () => {
             </div>
             <ul className="flex gap-12 list-none m-0 p-0">
               <li>
-                <a href="#home" className="text-white font-normal text-xl hover:text-white/70">home</a>
+                <a href="#home" className="text-white font-normal text-xl hover:text-white/70 text-shadow-lg">home</a>
               </li>
               <li>
-                <a href="#about" className="text-white font-normal text-xl hover:text-white/70">about</a>
+                <a href="#about" className="text-white font-normal text-xl hover:text-white/70 text-shadow-lg">about</a>
               </li>
               <li>
-                <a href="#destinations" className="text-white font-normal text-xl hover:text-white/70">destinations</a>
+                <a href="#destinations" className="text-white font-normal text-xl hover:text-white/70 text-shadow-lg">destinations</a>
               </li>
               <li>
-                <a href="#gallery" className="text-white font-normal text-xl hover:text-white/70">Gallery</a>
+                <a href="#gallery" className="text-white font-normal text-xl hover:text-white/70 text-shadow-lg">Gallery</a>
               </li>
               <li>
-                <a href="#footer" className="text-white font-normal text-xl hover:text-white/70">about us</a>
+                <a href="#footer" className="text-white font-normal text-xl hover:text-white/70 text-shadow-lg">about us</a>
               </li>
             </ul>
           </div>
         </nav>
-
         <div className="content w-full h-[calc(100%-65px)] flex flex-col justify-center items-center">
-          <h1 className="text-6xl max-w-6xl text-white text-center font-semibold leading-tight mb-4">
+          <h1 className="text-6xl max-w-6xl text-white text-center font-semibold leading-tight mb-4 text-shadow-xl">
             Banten, The Land of Serenity
           </h1>
-          <p className="text-gray-300 font-semibold max-w-4xl text-center text-lg mb-8">
+          <p className="textawal text-white font-semibold max-w-4xl text-center text-2xl mb-8 text-shadow-xl">
             Experience the Natural Beauty. Embrace the Cultural Diversity, And Seek Adventurous Opportunities
           </p>
-          <div className="App text-xl max-w-2xl text-white text-center font-semibold leading-tight mb-4">
+          <div className="App text-2xl max-w-2xl text-white text-center font-semibold leading-tight mb-4 text-shadow-xl">
             <p>
               {liveDate && moment(liveDate).format("dddd, DD-MM-YYYY hh:mm:ss A")}
             </p>
@@ -141,6 +141,5 @@ const HomeSection = () => {
     </section>
   );
 };
-
 
 export default HomeSection;
