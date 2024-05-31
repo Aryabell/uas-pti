@@ -1,16 +1,16 @@
-// Import React and any necessary components
+// Impor React dan komponen yang diperlukan
 import React, { useEffect, useState } from "react";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger"; // Correct import path for ScrollTrigger
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger"; // Jalur impor yang benar untuk ScrollTrigger
 import Modal from "./Modal";
 
-// Make sure to register ScrollTrigger plugin
+// Pastikan mendaftarkan plugin ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
 
-// Create a functional component for Box
+// Buat komponen fungsional untuk Box
 const Box = ({ image, title, description, onClick }) => {
   const handleClick = () => {
-    console.log("Clicked on image:", title);
+    console.log("Klik pada gambar:", title);
     onClick(image, title);
   };
 
@@ -22,14 +22,14 @@ const Box = ({ image, title, description, onClick }) => {
     >
       <img className="box-image" src={image} alt={title} />
       <div className="text">
-        <h2>{title}</h2>
+        <h2 className="font-bold">{title}</h2>
         <p className="description">{description}</p>
       </div>
     </div>
   );
 };
 
-// Create functional components for animations
+// Buat komponen fungsional untuk animasi
 const SwipeAnimation = ({ triggerSelector, boxSelectors }) => {
   useEffect(() => {
     const timeline = gsap.timeline({
@@ -85,7 +85,7 @@ const GalleryAnimation = ({ triggerSelector, boxSelectors }) => {
   return null;
 };
 
-// Create the main DestinationsSection component
+// Buat komponen utama DestinationsSection
 const DestinationsSection = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState("");
@@ -105,46 +105,46 @@ const DestinationsSection = () => {
     <section className="destinations" id="destinations">
       <div className="container">
         <div className="container-box flex flex-col items-center justify-center">
-          <h1 className="text-3xl font-bold mt-90">Destinations</h1>
+          <h1 className="text-3xl font-bold mt-50">Destinasi</h1>
           <div className="content opacity-0 transform -translate-x-32">
-            {/* Uncomment this paragraph if you want to include it */}
+            {/* Hapus tanda komentar ini jika ingin menyertakannya */}
             {/* <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero culpa pariatur iusto sequi, ut expedita soluta nihil est quaerat itaque corporis maiores in, at id officiis tempore. Harum vitae fugit itaque expedita asperiores vero delectus?</p> */}
           </div>
         </div>
         <div className="gallery">
-          {/* Create Box component for each destination */}
+          {/* Buat komponen Box untuk setiap destinasi */}
           <Box
             image="assets/Telaga.jpg"
             title="Telaga Biru Cisoka"
-            description="A stunning blue lake perfect for relaxing and enjoying nature."
+            description="Danau biru yang menakjubkan sempurna untuk bersantai dan menikmati alam."
             onClick={openModal}
           />
           <Box
             image="assets/Sawarna.jpeg"
             title="Pantai Sawarna"
-            description="A beautiful beach with pristine waters and scenic views."
+            description="Pantai yang indah dengan air yang jernih dan pemandangan yang menakjubkan."
             onClick={openModal}
           />
           <Box
             image="assets/Anyer.jpeg"
             title="Pantai Anyer"
-            description="A popular beach destination known for its sunsets and activities."
+            description="Tujuan pantai yang populer dikenal dengan matahari terbenamnya dan aktivitasnya."
             onClick={openModal}
           />
           <Box
             image="assets/UjungKulon.jpeg"
             title="Taman Nasional Ujung Kulon"
-            description="A national park offering diverse wildlife and lush greenery."
+            description="Taman nasional yang menawarkan keanekaragaman hayati dan vegetasi yang hijau."
             onClick={openModal}
           />
           <Box
             image="assets/Carita.jpeg"
             title="Pantai Carita"
-            description="A family-friendly beach with calm waves and beautiful views."
+            description="Pantai yang indah dengan ombak yang tenang dan pemandangan yang indah."
             onClick={openModal}
           />
         </div>
-        {/* Display modal if modalOpen is true */}
+        {/* Tampilkan modal jika modalOpen bernilai true */}
         {modalOpen && (
           <Modal
             image={selectedImage}
@@ -153,7 +153,7 @@ const DestinationsSection = () => {
           />
         )}
       </div>
-      {/* Animation components */}
+      {/* Komponen animasi */}
       <SwipeAnimation
         triggerSelector=".destinations"
         boxSelectors={[
@@ -175,5 +175,5 @@ const DestinationsSection = () => {
   );
 };
 
-// Export the DestinationsSection component
+// Export komponen DestinationsSection
 export default DestinationsSection;

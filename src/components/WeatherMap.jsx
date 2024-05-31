@@ -4,6 +4,7 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
+// API KEY untuk OpenWeather
 const OPENWEATHERMAP_API_KEY = 'd17624d72ff9a029bf23d6e72a6b3267';
 
 const locations = [
@@ -65,9 +66,9 @@ const WeatherMap = ({ name }) => {
       <Marker position={[location.lat, location.lng]}  icon={customIcon}>
         <Popup>
           <div>
-            <h2>{location.name}</h2>
-            <p>{weather.weather[0].description}</p>
-            <p>Temperature: {(weather.main.temp - 273.15).toFixed(2)} °C</p>
+            <h2 class="text-xl font-bold mb-4">{location.name}</h2>
+            <p class="text-base">{weather.weather[0].description}</p>
+            <p class="text-base">Temperature: {(weather.main.temp - 273.15).toFixed(2)} °C</p>
           </div>
         </Popup>
       </Marker>

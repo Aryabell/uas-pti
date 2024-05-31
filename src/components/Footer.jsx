@@ -2,6 +2,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
+        // Buat footer
         <footer>
             <section className="footer" id="footer">
                 <div className="container">
@@ -29,10 +30,6 @@ const Footer = () => {
                 <div className="copyright">
                     <div>
                         &copy;2024 - Kelompok 5, inc, all rights reserved
-                    </div>
-                    <div>
-                        <a>term & conditions</a>
-                        <a>Privacy policy</a>
                     </div>
                 </div>
             </section>

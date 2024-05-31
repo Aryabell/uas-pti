@@ -3,7 +3,7 @@ import WeatherMap from "./WeatherMap";
 
 const Modal = ({ title, closeModal }) => {
     const handleMapClick = () => {
-        const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(title)}`;
+        const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(title)}`; // API untuk Google Maps
         window.open(googleMapsUrl, '_blank');
     };
 
