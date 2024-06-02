@@ -105,7 +105,7 @@ const DestinationsSection = () => {
     <section className="destinations" id="destinations">
       <div className="container">
         <div className="container-box flex flex-col items-center justify-center">
-          <h1 className="text-3xl font-bold mt-50">Destination</h1>
+          <h1 className="text-3xl font-bold mt-50">Destinations</h1>
           <div className="content opacity-0 transform -translate-x-32">
             {/* Hapus tanda komentar ini jika ingin menyertakannya */}
             {/* <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero culpa pariatur iusto sequi, ut expedita soluta nihil est quaerat itaque corporis maiores in, at id officiis tempore. Harum vitae fugit itaque expedita asperiores vero delectus?</p> */}
